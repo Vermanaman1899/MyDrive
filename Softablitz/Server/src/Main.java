@@ -9,7 +9,7 @@ public class Main {
         try {
             ServerSocket server = new ServerSocket(port);
             System.out.println("Server started on port " + port);
-            getConnection(); //To connect to the database
+            MyConnection = getConnection(); //To connect to the database
             while (true) {
                 Socket socket = server.accept();
                 ClientHandler handler=new ClientHandler(socket);
