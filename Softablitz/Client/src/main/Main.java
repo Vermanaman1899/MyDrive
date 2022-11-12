@@ -16,7 +16,7 @@ public class Main extends Application {
     static ObjectOutputStream objectOutputStream;
     static ObjectInputStream objectInputStream;
 
-    public static void Main(String[] args) {
+    public static void main(String[] args) {
         try {
             Socket socket = new Socket(hostname, port);
             objectOutputStream = new ObjectOutputStream(socket.getOutputStream());

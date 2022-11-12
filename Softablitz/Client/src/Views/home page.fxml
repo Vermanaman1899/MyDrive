@@ -8,16 +8,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="NewFolder" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="NewFolder" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HomePageControllers">
    <children>
       <AnchorPane layoutX="137.0" layoutY="40.0" prefHeight="337.0" prefWidth="441.0">
          <children>
-            <TextArea layoutX="23.0" layoutY="55.0" prefHeight="267.0" prefWidth="404.0" text="&#10;        Welcome&#10;          to your&#10;     Drive Account">
+            <TextArea layoutX="25.0" layoutY="41.0" prefHeight="267.0" prefWidth="404.0" text="&#10;        Welcome&#10;          to your&#10;     Drive Account">
                <font>
                   <Font name="Bookman Old Style" size="38.0" />
                </font>
             </TextArea>
-            <Button layoutX="350.0" layoutY="14.0" mnemonicParsing="false" text="New Folder" />
+            <TextArea fx:id="HomePageName" layoutX="133.0" layoutY="-22.0" prefHeight="43.0" prefWidth="204.0" promptText="Name of Account Holdler" />
+            <Button fx:id="CreateNewFolder" layoutX="378.0" layoutY="324.0" mnemonicParsing="false" onAction="#onClickNewFolder" text="New Folder" />
          </children>
       </AnchorPane>
       <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drive Account " textAlignment="CENTER" wrappingWidth="122.80344200134277">
@@ -27,16 +28,16 @@
       </Text>
       <AnchorPane layoutX="14.0" layoutY="111.0" prefHeight="305.0" prefWidth="145.0">
          <children>
-            <Button fx:id="PersonalInfo" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="25.0" prefWidth="108.0" text="Personal info" textAlignment="CENTER" textFill="#070000" />
-            <MenuButton fx:id="MyFiles" layoutX="8.0" layoutY="62.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="My Folders" textOverrun="LEADING_WORD_ELLIPSIS">
+            <Button fx:id="PersonalInfo" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickPersonalInfo" prefHeight="25.0" prefWidth="108.0" text="Personal info" textAlignment="CENTER" textFill="#070000" />
+            <MenuButton fx:id="MyFiles" layoutX="8.0" layoutY="62.0" mnemonicParsing="false" onAction="#onClickMyFolders" prefHeight="25.0" prefWidth="108.0" text="My Folders" textOverrun="LEADING_WORD_ELLIPSIS">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
               </items>
             </MenuButton>
-            <Button fx:id="TrashFiles" layoutX="8.0" layoutY="116.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="25.0" prefWidth="108.0" text="Trash Files" />
-            <Button fx:id="Favorites" layoutX="8.0" layoutY="168.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="25.0" prefWidth="108.0" text="Favorites" />
-            <Button fx:id="About" layoutX="8.0" layoutY="220.0" mnemonicParsing="false" onAction="#onButtonClick" prefHeight="25.0" prefWidth="108.0" text="About" />
+            <Button fx:id="TrashFiles" layoutX="8.0" layoutY="116.0" mnemonicParsing="false" onAction="#onClickTrashFiles" prefHeight="25.0" prefWidth="108.0" text="Trash Files" />
+            <Button fx:id="Favorites" layoutX="8.0" layoutY="168.0" mnemonicParsing="false" onAction="#onClickFavourites" prefHeight="25.0" prefWidth="108.0" text="Favorites" />
+            <Button fx:id="About" layoutX="8.0" layoutY="220.0" mnemonicParsing="false" onAction="#onClickAbout" prefHeight="25.0" prefWidth="108.0" text="About" />
          </children>
       </AnchorPane>
    </children>

@@ -28,7 +28,7 @@
                   <Image url="@../lock.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="40.0" layoutY="144.0" opacity="0.9" prefHeight="30.0" prefWidth="141.0" text="Username">
+            <Label alignment="CENTER" layoutX="40.0" layoutY="144.0" opacity="0.9" prefHeight="30.0" prefWidth="141.0" text="Email ID">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font>
@@ -38,10 +38,10 @@
                   <Font name="System Bold Italic" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="LoginUsername" layoutX="175.0" layoutY="147.0" promptText="USERNAME" />
+            <TextField fx:id="LoginEmailID" layoutX="175.0" layoutY="147.0" promptText="Email ID" />
             <Button fx:id="Login" layoutX="139.0" layoutY="275.0" mnemonicParsing="false" onAction="#OnClickLogin" prefHeight="30.0" prefWidth="71.0" text="Login" />
             <Text layoutX="75.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account? " wrappingWidth="127.27734375" />
-            <Button fx:id="GotoSignup" layoutX="214.0" layoutY="317.0" mnemonicParsing="false" text="Click here!" />
+            <Button fx:id="GotoSignup" layoutX="214.0" layoutY="317.0" mnemonicParsing="false" onAction="#SwitchToSignup" text="Click here!" />
             <Label fx:id="wronglogin" layoutX="167.0" layoutY="108.0" />
          </children></AnchorPane>
    </children>

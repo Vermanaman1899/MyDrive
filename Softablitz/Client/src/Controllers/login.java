@@ -14,14 +14,21 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+
+//import main.Main;
+
+
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class login{
     @FXML
     public Button Login;
 
     @FXML
-    public TextField LoginUsername;
+    public TextField LoginEmail;
 
     @FXML
     public PasswordField LoginPassword;
@@ -29,18 +36,36 @@ public class login{
     @FXML
     public Button GotoSignup;
 
+
     public void OnClickLogin(ActionEvent actionEvent) {
-        LoginRequest request = new LoginRequest(LoginUsername.getText(), LoginPassword.getText());
-        Main.sendRequest(request);
-        LoginResponse response = (LoginResponse) Main.getResponse();
+        try{
+        LoginRequest request = new LoginRequest(LoginEmail.getText(), LoginPassword.getText());
+        main.Main.sendRequest(request);
+        LoginResponse response = (LoginResponse) main.Main.getResponse();
+
         Alert alert;
         if (response == null) {
             alert = new Alert(Alert.AlertType.ERROR, "Incorrect information. Please try again.");
         } else {
             alert = new Alert(Alert.AlertType.INFORMATION, "Login successful.");
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/home page.fxml"));
+            Scene scene = null;
+            Stage stage = (Stage) Login.getScene().getWindow();
+            try{
+                scene = new Scene(loader.load());
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+            stage.setScene(scene);
+            stage.setTitle("Home Page");
         }
         alert.showAndWait();
+    }catch (Exception e){
+            e.printStackTrace();
+        }
     }
+
 
     public void SwitchToSignup(ActionEvent actionEvent) {
         FXMLLoader registerLoader = new FXMLLoader(getClass().getResource("../Views/signup.fxml"));

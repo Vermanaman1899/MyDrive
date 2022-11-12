@@ -27,7 +27,7 @@ public class Main {
             return MyConnection;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            MyConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/softablitz", "root", "naman@mysql123");
+            MyConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/softablitz", "root", "#NitinMySqlPassword0500");
             System.out.println("Database Connected");
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);

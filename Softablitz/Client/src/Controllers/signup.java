@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import main.*;
 
 public class signup{
     @FXML
@@ -35,7 +36,7 @@ public class signup{
             SignupRequest registerRequest = new SignupRequest(SignupName.getText(), SignupEmailID.getText(), SignupUsername.getText(), SignupPassword.getText(),SignupPhone.getText());
             Main.sendRequest(registerRequest);
             System.out.println("Register request sent");
-            SignupResponse response = (SignupResponse) AppClient.getResponse();
+            SignupResponse response = (SignupResponse) Main.getResponse();
             assert response != null;
             if (response.getMessage().length() == 0) {
                 System.out.println("Please Try Again");
