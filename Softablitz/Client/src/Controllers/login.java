@@ -28,7 +28,7 @@ public class login{
     public Button Login;
 
     @FXML
-    public TextField LoginEmail;
+    public TextField LoginEmailID;
 
     @FXML
     public PasswordField LoginPassword;
@@ -39,7 +39,7 @@ public class login{
 
     public void OnClickLogin(ActionEvent actionEvent) {
         try{
-        LoginRequest request = new LoginRequest(LoginEmail.getText(), LoginPassword.getText());
+        LoginRequest request = new LoginRequest(LoginEmailID.getText(), LoginPassword.getText());
         main.Main.sendRequest(request);
         LoginResponse response = (LoginResponse) main.Main.getResponse();
 

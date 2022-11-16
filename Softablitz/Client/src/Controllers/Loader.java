@@ -1,12 +1,12 @@
 package Controllers;
-//
-//import javafx.fxml.FXMLLoader;
-//import javafx.scene.Scene;
-//import javafx.stage.Stage;
-//
-//import java.awt.*;
-//import java.io.IOException;
-//
+
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.awt.*;
+import java.io.IOException;
+
 //public class Loader {
 //    public Loader(String resourceLocation, Button button, String title){
 //        FXMLLoader loader = new FXMLLoader(getClass().getResource(resourceLocation));
