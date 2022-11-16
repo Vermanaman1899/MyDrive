@@ -49,6 +49,8 @@ public class login{
         } else {
             alert = new Alert(Alert.AlertType.INFORMATION, "Login successful.");
 
+//            Loader("../Views/home page.fxml", Login, "Home Page");
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/home page.fxml"));
             Scene scene = null;
             Stage stage = (Stage) Login.getScene().getWindow();
