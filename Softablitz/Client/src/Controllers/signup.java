@@ -20,6 +20,8 @@ import java.sql.SQLException;
 public class signup{
     @FXML
     public Button Signup;
+    @FXML
+    public Button BackToLoginPage;
 
     @FXML
     public TextField SignupName;
@@ -45,52 +47,60 @@ public class signup{
     public void OnClickCreateAccount(ActionEvent actionEvent) {
 
 
-//        if (SignupPassword.getText().equals(ConfirmSignupPassword.getText())) {
-//            SignupRequest registerRequest = new SignupRequest(SignupName.getText(), SignupEmailID.getText(), SignupUsername.getText(), SignupPassword.getText(),SignupPhone.getText());
-//            Main.sendRequest(registerRequest);
-//            System.out.println("Register request sent");
-//            SignupResponse response = (SignupResponse) Main.getResponse();
-//            assert response != null;
-//            if (response.getMessage().length() == 0) {
-//                System.out.println("Please Try Again");
-//            } else {
-//                System.out.println("Signup success!");
-//            }
-//        } else {
-//            System.out.println("Please enter correct info");
-//        }
 
-
+//        int access=0;
         String name = SignupName.getText();
         String email = SignupEmailID.getText();
         String userName = SignupUsername.getText();
         String password = SignupPassword.getText();
         String phoneNumber = SignupPhone.getText();
         String confirmPassword = ConfirmSignupPassword.getText();
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/softablitz", "root", "#NitinMySqlPassword0500");
-            pst = connection.prepareStatement("insert into users(username, passwd, name, email, mobile)values(?,?,?,?,?)");
-            pst.setString(1,userName);
-            pst.setString(2,password);
-            pst.setString(3,name);
-            pst.setString(4,email);
-            pst.setString(5,phoneNumber);
 
-            int status = pst.executeUpdate();
+        if (password.equals(confirmPassword)) {
+            SignupRequest registerRequest = new SignupRequest(name, email, userName, password,phoneNumber);
+            Main.sendRequest(registerRequest);
+            System.out.println("Register request sent");
+            SignupResponse response = (SignupResponse) Main.getResponse();
+            assert response != null;
+            if (response.getMessage().length() == 0) {
+                System.out.println("Please Try Again");
+            } else {
+                System.out.println("Signup success!");
 
-            if(status ==1){
-                JOptionPane.showMessageDialog(null,"Sign up data Stored Succssfuly");
-                SignupName.setText("");
-                SignupEmailID.setText("");
-                SignupUsername.setText("");
-                SignupPassword.setText("");
-                SignupPhone.setText("");
+                try{
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/softablitz", "root", "#NitinMySqlPassword0500");
+                    pst = connection.prepareStatement("insert into users(username, passwd, name, email, mobile)values(?,?,?,?,?)");
+                    pst.setString(1,userName);
+                    pst.setString(2,password);
+                    pst.setString(3,name);
+                    pst.setString(4,email);
+                    pst.setString(5,phoneNumber);
+
+                    int status = pst.executeUpdate();
+
+                    if(status ==1){
+                        JOptionPane.showMessageDialog(null,"Sign up data Stored Succssfuly");
+                        Loader loader = new Loader("../Views/home page.fxml", Signup, "Home Page");
+                        SignupName.setText("");
+                        SignupEmailID.setText("");
+                        SignupUsername.setText("");
+                        SignupPassword.setText("");
+                        SignupPhone.setText("");
+                    }
+
+                }catch (ClassNotFoundException | SQLException e){
+                    e.printStackTrace();
+                }
             }
-
-        }catch (ClassNotFoundException | SQLException e){
-            e.printStackTrace();
+        } else {
+            System.out.println("Please enter correct info");
         }
+    }
+
+    public void onClickBackToLoginPage(){
+        Loader loader = new Loader("../Views/login.fxml", BackToLoginPage, "Home Page");
+
     }
 
 }

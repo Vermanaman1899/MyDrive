@@ -46,21 +46,24 @@ public class login{
         Alert alert;
         if (response == null) {
             alert = new Alert(Alert.AlertType.ERROR, "Incorrect information. Please try again.");
+            Loader loader = new Loader("../Views/home page.fxml", Login, "Home Page");
         } else {
             alert = new Alert(Alert.AlertType.INFORMATION, "Login successful.");
 
-//            Loader("../Views/home page.fxml", Login, "Home Page");
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/home page.fxml"));
-            Scene scene = null;
-            Stage stage = (Stage) Login.getScene().getWindow();
-            try{
-                scene = new Scene(loader.load());
-            }catch(IOException e){
-                e.printStackTrace();
-            }
-            stage.setScene(scene);
-            stage.setTitle("Home Page");
+
+//            Loader loader = new Loader("../Views/home page.fxml", Login, "Home Page");
+
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/home page.fxml"));
+//            Scene scene = null;
+//            Stage stage = (Stage) Login.getScene().getWindow();
+//            try{
+//                scene = new Scene(loader.load());
+//            }catch(IOException e){
+//                e.printStackTrace();
+//            }
+//            stage.setScene(scene);
+//            stage.setTitle("Home Page");
         }
         alert.showAndWait();
     }catch (Exception e){

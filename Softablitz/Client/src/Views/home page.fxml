@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane fx:id="NewFolder" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HomePageControllers">
    <children>
@@ -17,7 +19,6 @@
                   <Font name="Bookman Old Style" size="38.0" />
                </font>
             </TextArea>
-            <TextArea fx:id="HomePageName" layoutX="133.0" layoutY="-22.0" prefHeight="43.0" prefWidth="204.0" promptText="Name of Account Holdler" />
             <Button fx:id="CreateNewFolder" layoutX="378.0" layoutY="324.0" mnemonicParsing="false" onAction="#onClickNewFolder" text="New Folder" />
          </children>
       </AnchorPane>
@@ -40,5 +41,8 @@
             <Button fx:id="About" layoutX="8.0" layoutY="220.0" mnemonicParsing="false" onAction="#onClickAbout" prefHeight="25.0" prefWidth="108.0" text="About" />
          </children>
       </AnchorPane>
+      <Button fx:id="LogOut" layoutX="536.0" layoutY="13.0" mnemonicParsing="false" onAction="#OnClickLogOut" text="LogOut" />
+      <TextFlow prefHeight="200.0" prefWidth="200.0" />
+      <Label fx:id="HomePageName" layoutX="253.0" layoutY="21.0" prefHeight="34.0" prefWidth="167.0" text="%key.unspecified" textAlignment="CENTER" />
    </children>
 </AnchorPane>
