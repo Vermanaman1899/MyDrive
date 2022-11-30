@@ -46,12 +46,11 @@ public class signup {
 
     public void OnClickCreateAccount(ActionEvent actionEvent) {
 
-
 //        int access=0;
 
 
         if (SignupPassword.getText().equals(ConfirmSignupPassword.getText())) {
-//            SignupRequest registerRequest = new SignupRequest(name, email, userName, password,phoneNumber);
+//            SignupRequest registerRequest = new SignupRequest(SignupName.getText(), SignupEmailID.getText(), SignupUsername.getText(), SignupPassword.getText(),SignupPhone.getText());
 //            Main.sendRequest(registerRequest);
 //            System.out.println("Register request sent");
 //            SignupResponse response = (SignupResponse) Main.getResponse();
@@ -94,10 +93,8 @@ public class signup {
             }
         }
     }
-
     public void onClickBackToLoginPage() {
         Loader loader = new Loader("../Views/login.fxml", BackToLoginPage, "Home Page");
-
     }
 }
 
