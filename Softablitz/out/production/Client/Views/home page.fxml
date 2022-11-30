@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
@@ -43,6 +42,5 @@
       </AnchorPane>
       <Button fx:id="LogOut" layoutX="536.0" layoutY="13.0" mnemonicParsing="false" onAction="#OnClickLogOut" text="LogOut" />
       <TextFlow prefHeight="200.0" prefWidth="200.0" />
-      <Label fx:id="HomePageName" layoutX="253.0" layoutY="21.0" prefHeight="34.0" prefWidth="167.0" text="%key.unspecified" textAlignment="CENTER" />
    </children>
 </AnchorPane>
