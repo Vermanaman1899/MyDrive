@@ -4,8 +4,9 @@ import Request.LoginRequest;
 import Request.SignupRequest;
 import Response.LoginResponse;
 import Response.SignupResponse;
-import main.Main;
+import Services.DatabaseConnection;
 
+import javax.xml.crypto.Data;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +14,7 @@ import java.sql.SQLException;
 
 public class DatabaseService {
     public static SignupResponse createUser(SignupRequest signupRequest){
-        Connection connection = Main.getConnection();
+        Connection connection = DatabaseConnection.getConnection();
         String query = "INSERT INTO users (username, passwd, name, email, mobile) VALUES (?, ?, ?, ?, ?);";
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -35,12 +36,13 @@ public class DatabaseService {
     }
 
     public static LoginResponse loginUser(LoginRequest loginRequest) {
-        Connection connection = Main.getConnection();
+        Connection connection = DatabaseConnection.getConnection();
         String query = "SELECT username, name, email, mobile, passwd FROM users WHERE email = ? AND passwd = ?;";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, loginRequest.getEmail());
             preparedStatement.setString(2, loginRequest.getPassword());
+            System.out.println(preparedStatement);
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()) {
                 String name = resultSet.getString(1);

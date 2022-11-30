@@ -2,6 +2,7 @@ package Controllers;
 
 import Request.SignupRequest;
 import Response.SignupResponse;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -17,7 +18,7 @@ import java.sql.SQLException;
 
 //import Services.*;
 
-public class signup{
+public class signup {
     @FXML
     public Button Signup;
     @FXML
@@ -40,67 +41,64 @@ public class signup{
     @FXML
     public TextField SignupPhone;
 
-    Connection connection ;
+    Connection connection;
     PreparedStatement pst;
-
 
     public void OnClickCreateAccount(ActionEvent actionEvent) {
 
 
-
 //        int access=0;
-        String name = SignupName.getText();
-        String email = SignupEmailID.getText();
-        String userName = SignupUsername.getText();
-        String password = SignupPassword.getText();
-        String phoneNumber = SignupPhone.getText();
-        String confirmPassword = ConfirmSignupPassword.getText();
 
-        if (password.equals(confirmPassword)) {
-            SignupRequest registerRequest = new SignupRequest(name, email, userName, password,phoneNumber);
-            Main.sendRequest(registerRequest);
-            System.out.println("Register request sent");
-            SignupResponse response = (SignupResponse) Main.getResponse();
-            assert response != null;
-            if (response.getMessage().length() == 0) {
-                System.out.println("Please Try Again");
-            } else {
-                System.out.println("Signup success!");
 
-                try{
-                    Class.forName("com.mysql.cj.jdbc.Driver");
-                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/softablitz", "root", "#NitinMySqlPassword0500");
-                    pst = connection.prepareStatement("insert into users(username, passwd, name, email, mobile)values(?,?,?,?,?)");
-                    pst.setString(1,userName);
-                    pst.setString(2,password);
-                    pst.setString(3,name);
-                    pst.setString(4,email);
-                    pst.setString(5,phoneNumber);
+        if (SignupPassword.getText().equals(ConfirmSignupPassword.getText())) {
+//            SignupRequest registerRequest = new SignupRequest(name, email, userName, password,phoneNumber);
+//            Main.sendRequest(registerRequest);
+//            System.out.println("Register request sent");
+//            SignupResponse response = (SignupResponse) Main.getResponse();
+//            assert response != null;
+//            if (response.getMessage().length() == 0) {
+//                System.out.println("Please Try Again");
+//            } else {
+//                System.out.println("Signup success!");
+//
+//
+//            }
+//        } else {
+//            System.out.println("Please enter correct info");
+//        }
 
-                    int status = pst.executeUpdate();
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/softablitz", "root", "#NitinMySqlPassword0500");
+                pst = connection.prepareStatement("insert into users(username, passwd, name, email, mobile)values(?,?,?,?,?)");
+                pst.setString(1, SignupUsername.getText());
+                pst.setString(2, SignupPassword.getText());
+                pst.setString(3, SignupName.getText());
+                pst.setString(4, SignupEmailID.getText());
+                pst.setString(5, SignupPhone.getText());
 
-                    if(status ==1){
-                        JOptionPane.showMessageDialog(null,"Sign up data Stored Succssfuly");
-                        Loader loader = new Loader("../Views/home page.fxml", Signup, "Home Page");
-                        SignupName.setText("");
-                        SignupEmailID.setText("");
-                        SignupUsername.setText("");
-                        SignupPassword.setText("");
-                        SignupPhone.setText("");
-                    }
+                int status = pst.executeUpdate();
 
-                }catch (ClassNotFoundException | SQLException e){
-                    e.printStackTrace();
+                if (status == 1) {
+                    JOptionPane.showMessageDialog(null, "Sign up data Stored Succssfuly");
+                    Loader loader = new Loader("../Views/home page.fxml", Signup, "Home Page");
+                    SignupName.setText("");
+                    SignupEmailID.setText("");
+                    SignupUsername.setText("");
+                    SignupPassword.setText("");
+                    SignupPhone.setText("");
                 }
+
+            } catch (ClassNotFoundException | SQLException e) {
+                e.printStackTrace();
             }
-        } else {
-            System.out.println("Please enter correct info");
         }
     }
 
-    public void onClickBackToLoginPage(){
+    public void onClickBackToLoginPage() {
         Loader loader = new Loader("../Views/login.fxml", BackToLoginPage, "Home Page");
 
     }
-
 }
+
+
