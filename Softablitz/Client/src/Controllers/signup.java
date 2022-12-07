@@ -59,16 +59,14 @@ public class signup {
 //                System.out.println("Please Try Again");
 //            } else {
 //                System.out.println("Signup success!");
-//
-//
 //            }
 //        } else {
 //            System.out.println("Please enter correct info");
-//        }
+//        } 
 
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/softablitz", "root", "#NitinMySqlPassword0500");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/softablitz", "root", "naman@mysql123");
                 pst = connection.prepareStatement("insert into users(username, passwd, name, email, mobile)values(?,?,?,?,?)");
                 pst.setString(1, SignupUsername.getText());
                 pst.setString(2, SignupPassword.getText());
