@@ -22,6 +22,7 @@ public class Main extends Application {
             Socket socket = new Socket(hostname, port);
             objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
             objectInputStream = new ObjectInputStream(socket.getInputStream());
+            System.out.println(objectInputStream);
             System.out.println("Connected to the server!");
             Main.launch(args);
         } catch (Exception e) {
@@ -52,6 +53,7 @@ public class Main extends Application {
     public static Object getResponse() {
         try {
             System.out.println("Waiting for response...");
+            System.out.println(objectInputStream);
             return objectInputStream.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
