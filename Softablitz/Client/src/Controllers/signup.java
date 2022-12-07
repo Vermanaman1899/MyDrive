@@ -50,29 +50,6 @@ public class signup {
 
 
         if (SignupPassword.getText().equals(ConfirmSignupPassword.getText())) {
-//            SignupRequest registerRequest = new SignupRequest(SignupName.getText(), SignupEmailID.getText(), SignupUsername.getText(), SignupPassword.getText(),SignupPhone.getText());
-//            Main.sendRequest(registerRequest);
-//            System.out.println("Register request sent");
-//            SignupResponse response = (SignupResponse) Main.getResponse();
-//            assert response != null;
-//            if (response.getMessage().length() == 0) {
-//                System.out.println("Please Try Again");
-//            } else {
-//                System.out.println("Signup success!");
-//            }
-//        } else {
-//            System.out.println("Please enter correct info");
-//        } 
-
-            try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/softablitz", "root", "naman@mysql123");
-                pst = connection.prepareStatement("insert into users(username, passwd, name, email, mobile)values(?,?,?,?,?)");
-                pst.setString(1, SignupUsername.getText());
-                pst.setString(2, SignupPassword.getText());
-                pst.setString(3, SignupName.getText());
-                pst.setString(4, SignupEmailID.getText());
-                pst.setString(5, SignupPhone.getText());
             SignupRequest registerRequest = new SignupRequest(SignupName.getText(), SignupEmailID.getText(), SignupUsername.getText(), SignupPassword.getText(),SignupPhone.getText());
             Main.sendRequest(registerRequest);
             System.out.println("Register request sent");
@@ -83,6 +60,7 @@ public class signup {
             } else {
                 System.out.println("Signup success!");
                 Loader loader = new Loader("../Views/home page.fxml", Signup, "Home Page");
+
             }
         } else {
             System.out.println("Please enter correct info");
