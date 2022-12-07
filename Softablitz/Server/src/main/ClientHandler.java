@@ -21,6 +21,7 @@ public class ClientHandler implements Runnable{
         this.socket=socket;
         this.objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
         this.objectInputStream = new ObjectInputStream(socket.getInputStream());
+        System.out.println(objectInputStream);
     }
 
     @Override
@@ -47,6 +48,7 @@ public class ClientHandler implements Runnable{
                     }
                 }
             } catch (Exception e) {
+                e.printStackTrace();
                 break;
             }
         }
