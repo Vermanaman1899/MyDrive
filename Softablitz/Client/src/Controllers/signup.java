@@ -59,39 +59,13 @@ public class signup {
                 System.out.println("Please Try Again");
             } else {
                 System.out.println("Signup success!");
-
+                Loader loader = new Loader("../Views/home page.fxml", Signup, "Home Page");
 
             }
         } else {
             System.out.println("Please enter correct info");
         }
 
-//            try {
-//                Class.forName("com.mysql.cj.jdbc.Driver");
-//                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/softablitz", "root", "#NitinMySqlPassword0500");
-//                pst = connection.prepareStatement("insert into users(username, passwd, name, email, mobile)values(?,?,?,?,?)");
-//                pst.setString(1, SignupUsername.getText());
-//                pst.setString(2, SignupPassword.getText());
-//                pst.setString(3, SignupName.getText());
-//                pst.setString(4, SignupEmailID.getText());
-//                pst.setString(5, SignupPhone.getText());
-//
-//                int status = pst.executeUpdate();
-//
-//                if (status == 1) {
-//                    JOptionPane.showMessageDialog(null, "Sign up data Stored Succssfuly");
-//                    Loader loader = new Loader("../Views/home page.fxml", Signup, "Home Page");
-//                    SignupName.setText("");
-//                    SignupEmailID.setText("");
-//                    SignupUsername.setText("");
-//                    SignupPassword.setText("");
-//                    SignupPhone.setText("");
-//                }
-//
-//            } catch (ClassNotFoundException | SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
     }
     public void onClickBackToLoginPage() {
         Loader loader = new Loader("../Views/login.fxml", BackToLoginPage, "Home Page");
