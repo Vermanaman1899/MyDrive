@@ -1,15 +1,6 @@
 package Request;
 import java.io.Serializable;
 
-//public enum RequestType{
-//    LOGIN_REQUEST,
-//    SIGNUP_REQUEST;
-//}
-
-
-//public abstract class AppRequest implements Serializable {
-//    public abstract RequestType getRequestType();
-//}
 
 public class SignupRequest extends AppRequest implements Serializable {
 
