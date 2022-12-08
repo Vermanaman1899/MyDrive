@@ -61,20 +61,11 @@ public class HomePageControllers {
                 } catch (SQLException e) {
                         e.printStackTrace();
                 }
-
-//                finally{
-//                        try{
-//                                if(con != null){
-//                                        con.close();
-//                                }
-//                        }catch( SQLException e){
-//                                e.printStackTrace();
-//                        }
-//                }
-
         }
 
-        public void onClickNewFolder(){}
+        public void onClickNewFolder(){
+                Loader loader = new Loader("../View/newFolder.fxml","New Folder");
+        }
 
         public void onClickPersonalInfo(ActionEvent actionEvent){
                 try {
@@ -90,7 +81,7 @@ public class HomePageControllers {
 
         public void onClickTrashFiles(){
                 try {
-                        Loader loader = new Loader("../Views/trash.fxml", PersonalInfo, "Profile Page");
+                        Loader loader = new Loader("../Views/trash.fxml", TrashFiles, "Trash");
                 }
                 catch( Exception e){
                         e.printStackTrace();
@@ -100,7 +91,7 @@ public class HomePageControllers {
 
         public void onClickFavourites() {
                 try {
-                        Loader loader = new Loader("../Views/favourites.fxml", PersonalInfo, "Profile Page");
+                        Loader loader = new Loader("../Views/favourites.fxml", Favorites, "Favorites Page");
                 }
                 catch( Exception e){
                         e.printStackTrace();
@@ -109,7 +100,7 @@ public class HomePageControllers {
         }
         public void onClickAbout(){
                 try {
-                        Loader loader = new Loader("../Views/About Drive.fxml", PersonalInfo, "Profile Page");
+                        Loader loader = new Loader("../Views/About Drive.fxml", About, "About");
                 }
                 catch( Exception e){
                         e.printStackTrace();

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FileInfoControllers">
+   <children>
+      <VBox prefHeight="410.0" prefWidth="610.0" />
+      <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane layoutX="65.0" layoutY="60.0" prefHeight="253.0" prefWidth="413.0">
+               <children>
+                  <TextField fx:id="FileName" layoutX="234.0" layoutY="43.0" promptText="Enter File Name" />
+                  <TextField fx:id="FileType" layoutX="234.0" layoutY="102.0" promptText="Enter File Type" />
+                  <Label layoutX="88.0" layoutY="41.0" prefHeight="30.0" prefWidth="101.0" text="File Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="103.0" layoutY="104.0" text=" Type">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="PrivateRButton" layoutX="225.0" layoutY="164.0" mnemonicParsing="false" onAction="#onClickPrivateRB" text="Private" />
+                  <RadioButton fx:id="PublicRButton" layoutX="112.0" layoutY="164.0" mnemonicParsing="false" onAction="#onClickPublicRB" text="Public" />
+                  <RadioButton fx:id="FavouriteRButton" layoutX="165.0" layoutY="215.0" mnemonicParsing="false" onAction="#onClickFavouriteRB" text="Favourite" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="203.0" layoutY="37.0" prefHeight="45.0" prefWidth="194.0" text="File Properties" textAlignment="CENTER">
+               <font>
+                  <Font name="Cambria" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
