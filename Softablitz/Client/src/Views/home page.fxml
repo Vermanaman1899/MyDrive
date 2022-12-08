@@ -31,8 +31,8 @@
             <Button fx:id="PersonalInfo" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickPersonalInfo" prefHeight="25.0" prefWidth="108.0" text="Personal info" textAlignment="CENTER" textFill="#070000" />
             <MenuButton fx:id="MyFiles" layoutX="8.0" layoutY="62.0" mnemonicParsing="false" onAction="#onClickMyFolders" prefHeight="25.0" prefWidth="108.0" text="My Folders" textOverrun="LEADING_WORD_ELLIPSIS">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                <MenuItem mnemonicParsing="false" text="folder1" />
+                <MenuItem mnemonicParsing="false" text="folder2" />
               </items>
             </MenuButton>
             <Button fx:id="TrashFiles" layoutX="8.0" layoutY="116.0" mnemonicParsing="false" onAction="#onClickTrashFiles" prefHeight="25.0" prefWidth="108.0" text="Trash Files" />
@@ -41,6 +41,6 @@
          </children>
       </AnchorPane>
       <Button fx:id="LogOut" layoutX="536.0" layoutY="13.0" mnemonicParsing="false" onAction="#OnClickLogOut" text="LogOut" />
-      <TextFlow prefHeight="200.0" prefWidth="200.0" />
+      <TextFlow prefHeight="105.0" prefWidth="145.0" />
    </children>
 </AnchorPane>

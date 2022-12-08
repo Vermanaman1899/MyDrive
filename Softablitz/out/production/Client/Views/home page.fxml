@@ -41,6 +41,6 @@
          </children>
       </AnchorPane>
       <Button fx:id="LogOut" layoutX="536.0" layoutY="13.0" mnemonicParsing="false" onAction="#OnClickLogOut" text="LogOut" />
-      <TextFlow prefHeight="200.0" prefWidth="200.0" />
+      <TextFlow prefHeight="105.0" prefWidth="145.0" />
    </children>
 </AnchorPane>
