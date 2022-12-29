@@ -24,6 +24,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class login{
+    static String loginEmailId = "";
     @FXML
     public Button Login;
 
@@ -51,6 +52,7 @@ public class login{
             alert = new Alert(Alert.AlertType.ERROR, "Incorrect information. Please try again.");
         } else {
             alert = new Alert(Alert.AlertType.INFORMATION, "Login successful.");
+            loginEmailId = LoginEmailID.getText();
             Loader loader = new Loader("../Views/home page.fxml", Login, "Home Page");
         }
         alert.showAndWait();

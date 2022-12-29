@@ -3,6 +3,7 @@ package Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,7 +19,7 @@ import java.sql.*;
 public class HomePageControllers {
 
         @FXML
-        public Label HomePageName;
+        private Label HomePageNameLabel;
         @FXML
         public Button PersonalInfo;
         @FXML
@@ -31,40 +32,52 @@ public class HomePageControllers {
         public Button About;
         @FXML
         public Button LogOut;
+        @FXML
+        public Button MyFolders;
 
 
         public HomePageControllers() {
-//
-//                //
+                
                 // use DatabaseConnection class to establish connection between homePageNAme and database
                 
                 Connection con = null;
-                PreparedStatement pst = null;
+                Statement st = null;
                 ResultSet rs = null;
                 con = DatabaseConnection.getConnection();   // connecting to database to access username which is being showed on home page.....
                 try {
                         
                         //create query
-                        String query = "select username from users";
+                        String query = "select username from users where email ='"+login.loginEmailId+"'";
 
                         //open the statement
-                        pst = con.prepareStatement(query);
-                        rs = pst.executeQuery();
+                        st = con.createStatement();
+                        rs = st.executeQuery(query);
 
                         //display the results
                         while(rs.next()){
-//                                HomePageName = rs.getString("username");
-//                                System.out.format("Hello-> %s",username);
+                                HomePageNameLabel.setText(rs.getString("username"));
                         }
-                        pst.close();
+                        st.close();
 
                 } catch (SQLException e) {
                         e.printStackTrace();
                 }
         }
 
-        public void onClickNewFolder(){
-                Loader loader = new Loader("../View/newFolder.fxml","New Folder");
+        public void onClickNewFolder(ActionEvent event){
+//                Loader loader = new Loader("../View/newFolder.fxml","New Folder");
+                try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/newFolder.fxml"));
+                        Parent root = (Parent) loader.load();
+                        Stage stage = new Stage();
+                        stage.setTitle("New Folder");
+                        stage.setScene(new Scene(root));
+                        stage.show();
+                }
+                catch( IOException e){
+                        e.printStackTrace();
+                        System.out.println("Can't load this new window");
+                }
         }
 
         public void onClickPersonalInfo(ActionEvent actionEvent){

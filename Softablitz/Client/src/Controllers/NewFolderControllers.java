@@ -12,5 +12,10 @@ public class NewFolderControllers {
 
     public void onClickDone(){
         //close the new folder window;::::::
+        //after creating new folder;:::::::
+    }
+
+    public void onClickCancel(){
+        //close new folder window;::::::::::::
     }
 }
