@@ -15,5 +15,6 @@
       </Label>
       <TextField fx:id="FolderName" layoutX="241.0" layoutY="147.0" promptText="Enter Folder Name" />
       <Button fx:id="Done" layoutX="223.0" layoutY="236.0" mnemonicParsing="false" onAction="#onClickDone" prefHeight="25.0" prefWidth="70.0" text="Done" />
+      <Button fx:id="Cancel" layoutX="351.0" layoutY="236.0" mnemonicParsing="false" onAction="#onClickCancel" prefHeight="25.0" prefWidth="70.0" text="Cancel" />
    </children>
 </AnchorPane>
