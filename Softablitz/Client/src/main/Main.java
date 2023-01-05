@@ -2,6 +2,7 @@ package main;
 import Request.AppRequest;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
@@ -32,10 +33,11 @@ public class Main extends Application {
 
     @Override
     public void start(@NotNull Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Views/login.fxml"));
+//        FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Views/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../Views/login.fxml"));
 
-//        FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Views/signup.fxml"));
-        Scene scene = new Scene(loader.load(), 581, 388);
+//        Scene scene = new Scene(loader.load(), 581, 388);
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Login");
         stage.show();
