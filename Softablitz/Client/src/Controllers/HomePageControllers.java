@@ -19,7 +19,7 @@ import java.sql.*;
 public class HomePageControllers {
 
         @FXML
-        private Label HomePageNameLabel;
+        public Label HomePageNameLabel;
         @FXML
         public Button PersonalInfo;
         @FXML
@@ -34,60 +34,54 @@ public class HomePageControllers {
         public Button LogOut;
         @FXML
         public Button MyFolders;
+        @FXML
+        public Button UploadFile;
+        @FXML
+        public Button MyFiles;
 
 
         public HomePageControllers() {
-                
+
+                HomePageNameLabel = new Label();
+
                 // use DatabaseConnection class to establish connection between homePageNAme and database
                 
                 Connection con = null;
-                Statement st = null;
+                PreparedStatement pst = null;
                 ResultSet rs = null;
-                con = DatabaseConnection.getConnection();   // connecting to database to access username which is being showed on home page.....
+                  
                 try {
-                        
+                        // connecting to database to access username which is being showed on home page.....
+                        con = DatabaseConnection.getConnection();
                         //create query
-                        String query = "select username from users where email ='"+login.loginEmailId+"'";
+                        String query = "select username from users where email = ?;";
 
-                        //open the statement
-                        st = con.createStatement();
-                        rs = st.executeQuery(query);
+                        //open the prepared statement
+                        pst = con.prepareStatement(query);
+                        pst.setString(1, login.loginEmailId);
+                        rs = pst.executeQuery();
+
+                        System.out.println(pst);
 
                         //display the results
                         while(rs.next()){
+                                System.out.println(rs.getString("username"));
                                 HomePageNameLabel.setText(rs.getString("username"));
                         }
-                        st.close();
+                        pst.close();
 
                 } catch (SQLException e) {
                         e.printStackTrace();
                 }
         }
-
+        @FXML
         public void onClickNewFolder(ActionEvent event){
-//                Loader loader = new Loader("../View/newFolder.fxml","New Folder");
-                try {
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/newFolder.fxml"));
-                        Parent root = (Parent) loader.load();
-                        Stage stage = new Stage();
-                        stage.setTitle("New Folder");
-                        stage.setScene(new Scene(root));
-                        stage.show();
-                }
-                catch( IOException e){
-                        e.printStackTrace();
-                        System.out.println("Can't load this new window");
-                }
+                Loader loader = new Loader("../Views/newFolder.fxml","New Folder");
+//
         }
 
         public void onClickPersonalInfo(ActionEvent actionEvent){
-                try {
-                        Loader loader = new Loader("../Views/personalinfo.fxml", PersonalInfo, "Profile Page");
-                }
-                catch( Exception e){
-                        e.printStackTrace();
-                        System.out.println("Sorry! CAn't Load page at this time");
-                }
+               Loader loader = new Loader("../Views/personalinfo.fxml","Profile Page");
         }
 
         public void onClickMyFolders(){}
@@ -104,7 +98,7 @@ public class HomePageControllers {
 
         public void onClickFavourites() {
                 try {
-                        Loader loader = new Loader("../Views/favourites.fxml", Favorites, "Favorites Page");
+                        Loader loader = new Loader("../Views/favourites.fxml","Favorites Page");
                 }
                 catch( Exception e){
                         e.printStackTrace();
@@ -113,7 +107,7 @@ public class HomePageControllers {
         }
         public void onClickAbout(){
                 try {
-                        Loader loader = new Loader("../Views/About Drive.fxml", About, "About");
+                        Loader loader = new Loader("../Views/About Drive.fxml", "About");
                 }
                 catch( Exception e){
                         e.printStackTrace();
@@ -122,6 +116,16 @@ public class HomePageControllers {
         }
 
         public void OnClickLogOut(){}
+
+        public void onClickMyFiles(){
+
+        }
+
+        public void onClickNewFile(){
+                //on a new window fileInfo view should be visible :::::::
+                Loader loader = new Loader("../Views/fileInfo.fxml","New File");
+        }
+
 
 
 }

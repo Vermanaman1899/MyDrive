@@ -32,6 +32,7 @@
                   <Font size="21.0" />
                </font>
             </Label>
+            <Button fx:id="UploadFile" layoutX="278.0" layoutY="324.0" mnemonicParsing="false" onAction="#onClickNewFile" prefHeight="25.0" prefWidth="77.0" text="New File" />
          </children>
       </AnchorPane>
       <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drive Account " textAlignment="CENTER" wrappingWidth="122.80344200134277">
@@ -42,10 +43,11 @@
       <AnchorPane layoutX="14.0" layoutY="111.0" prefHeight="305.0" prefWidth="145.0">
          <children>
             <Button fx:id="PersonalInfo" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickPersonalInfo" prefHeight="25.0" prefWidth="108.0" text="Personal info" textAlignment="CENTER" textFill="#070000" />
-            <Button fx:id="TrashFiles" layoutX="8.0" layoutY="116.0" mnemonicParsing="false" onAction="#onClickTrashFiles" prefHeight="25.0" prefWidth="108.0" text="Trash Files" />
-            <Button fx:id="Favorites" layoutX="8.0" layoutY="168.0" mnemonicParsing="false" onAction="#onClickFavourites" prefHeight="25.0" prefWidth="108.0" text="Favorites" />
-            <Button fx:id="About" layoutX="8.0" layoutY="220.0" mnemonicParsing="false" onAction="#onClickAbout" prefHeight="25.0" prefWidth="108.0" text="About" />
+            <Button fx:id="TrashFiles" layoutX="8.0" layoutY="104.0" mnemonicParsing="false" onAction="#onClickTrashFiles" prefHeight="25.0" prefWidth="108.0" text="Trash Files" />
+            <Button fx:id="Favorites" layoutX="8.0" layoutY="153.0" mnemonicParsing="false" onAction="#onClickFavourites" prefHeight="25.0" prefWidth="108.0" text="Favorites" />
+            <Button fx:id="About" layoutX="5.0" layoutY="199.0" mnemonicParsing="false" onAction="#onClickAbout" prefHeight="25.0" prefWidth="108.0" text="About" />
             <Button fx:id="MyFolders" layoutX="8.0" layoutY="61.0" mnemonicParsing="false" onAction="#onClickMyFolders" prefHeight="25.0" prefWidth="108.0" text="My Folders" />
+            <Button fx:id="MyFiles" layoutX="5.0" layoutY="244.0" mnemonicParsing="false" onAction="#onClickMyFiles" prefHeight="25.0" prefWidth="108.0" text="My Files" />
          </children>
       </AnchorPane>
       <Button fx:id="LogOut" layoutX="536.0" layoutY="13.0" mnemonicParsing="false" onAction="#OnClickLogOut" text="LogOut" />

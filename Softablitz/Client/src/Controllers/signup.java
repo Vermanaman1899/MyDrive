@@ -19,6 +19,7 @@ import java.sql.SQLException;
 //import Services.*;
 
 public class signup {
+    static String signupEmailId = ""; // it is being used in preparedStatement in homePage Constructor to set username of account holder
     @FXML
     public Button Signup;
     @FXML
@@ -59,6 +60,7 @@ public class signup {
                 System.out.println("Please Try Again");
             } else {
                 System.out.println("Signup success!");
+//                signupEmailId = SignupEmailID.getText();
                 Loader loader = new Loader("../Views/home page.fxml", Signup, "Home Page");
 
             }

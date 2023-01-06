@@ -43,5 +43,19 @@ public class Loader {
             System.out.println("Can't load this new window");
         }
 
+        // or
+//        try{
+//                        //        FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Views/login.fxml"));
+//                        Parent root = FXMLLoader.load(getClass().getResource("../Views/newFolder.fxml"));
+//
+//                        Scene scene = new Scene(root);
+//                        Stage stage = new Stage();
+//                        stage.setScene(scene);
+//                        stage.setTitle("New Folder");
+//                        stage.show();
+//                }catch (Exception e){
+//                        e.printStackTrace();
+//                }
+
     }
 }
