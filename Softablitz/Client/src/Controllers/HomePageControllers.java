@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -31,7 +32,9 @@ public class HomePageControllers {
         @FXML
         public Button About;
         @FXML
-        public Button LogOut;
+        private Button LogOut;
+        @FXML
+        private AnchorPane scenePane;
         @FXML
         public Button MyFolders;
         @FXML
@@ -49,7 +52,7 @@ public class HomePageControllers {
                 Connection con = null;
                 PreparedStatement pst = null;
                 ResultSet rs = null;
-                  
+
                 try {
                         // connecting to database to access username which is being showed on home page.....
                         con = DatabaseConnection.getConnection();
@@ -115,7 +118,18 @@ public class HomePageControllers {
                 }
         }
 
-        public void OnClickLogOut(){}
+        public void OnClickLogOut(){
+
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Logout");
+                alert.setHeaderText("You're about to logout!");
+                alert.setContentText("Do you want to logout ?");
+
+                if(alert.showAndWait().get() == ButtonType.OK) {
+                        Stage stage = (Stage) scenePane.getScene().getWindow();
+                        stage.close();
+                }
+        }
 
         public void onClickMyFiles(){
 
