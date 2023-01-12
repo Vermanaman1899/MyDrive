@@ -16,35 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `fileslist`
---
-
-DROP TABLE IF EXISTS `fileslist`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `fileslist` (
-  `filename` varchar(50) DEFAULT NULL,
-  `filetype` varchar(50) DEFAULT NULL,
-  `uploadedby` varchar(50) DEFAULT NULL,
-  `dateofupload` datetime DEFAULT NULL,
-  `favourite` tinyint(1) DEFAULT NULL,
-  `public` tinyint(1) DEFAULT NULL,
-  `sizeoffile` float DEFAULT NULL,
-  KEY `uploadedby` (`uploadedby`),
-  CONSTRAINT `fileslist_ibfk_1` FOREIGN KEY (`uploadedby`) REFERENCES `users` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `fileslist`
---
-
-LOCK TABLES `fileslist` WRITE;
-/*!40000 ALTER TABLE `fileslist` DISABLE KEYS */;
-/*!40000 ALTER TABLE `fileslist` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `users`
 --
 
@@ -67,7 +38,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('namanv2004','naman123','Naman Verma','naman2004@gmail.com','8626960087');
+INSERT INTO `users` VALUES ('','','','',''),('aaa','aaa','aaa','aaa','aaa'),('as','as','as','asdf','12312313'),('bbb','bbb','bbb','bbb','bbb'),('cc','cc','cc','cc','cc'),('namanv2004','naman123','Naman Verma','naman2004@gmail.com','8626960087'),('Nits','321','N','Nitin@gmail.com','5235237'),('matrix','123','Nitin','nitin0500','898798798'),('Cats','09','rahul','rahul@8798','68768987');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -80,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-11 10:48:49
+-- Dump completed on 2023-01-12 16:40:18
