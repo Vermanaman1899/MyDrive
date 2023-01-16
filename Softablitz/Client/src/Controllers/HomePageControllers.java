@@ -132,7 +132,7 @@ public class HomePageControllers {
         }
 
         public void onClickMyFiles(){
-
+                Loader loader = new Loader("../Views/allUploadedFiles.fxml", "My Files");
         }
 
         public void onClickNewFile(){
