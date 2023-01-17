@@ -13,12 +13,12 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <TableView fx:id="MyFilesTable" layoutX="42.0" layoutY="77.0" prefHeight="281.0" prefWidth="513.0">
+      <TableView fx:id="MyFilesTable" layoutX="42.0" layoutY="77.0" onMouseClicked="#getFile" prefHeight="281.0" prefWidth="513.0">
         <columns>
-          <TableColumn fx:id="FileName" prefWidth="220.66665649414062" text="File Name" />
-          <TableColumn fx:id="Date" prefWidth="145.33331298828125" text="Date" />
-            <TableColumn fx:id="FileType" prefWidth="68.66668701171875" text="Type" />
-            <TableColumn fx:id="FileSize" prefWidth="78.0" text="Size" />
+          <TableColumn fx:id="columnFileName" prefWidth="220.66665649414062" text="File Name" />
+          <TableColumn fx:id="columnDate" prefWidth="145.33331298828125" text="Date" />
+            <TableColumn fx:id="columnFileType" prefWidth="68.66668701171875" text="Type" />
+            <TableColumn fx:id="columnFileSize" prefWidth="78.0" text="Size" />
         </columns>
       </TableView>
    </children>
