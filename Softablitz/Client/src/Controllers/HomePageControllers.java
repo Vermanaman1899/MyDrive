@@ -3,6 +3,7 @@ package Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.fxml.FXMLLoader;
@@ -14,10 +15,12 @@ import javafx.stage.Stage;
 import java.lang.*;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
+import java.util.ResourceBundle;
 
 
-public class HomePageControllers {
+public class HomePageControllers implements Initializable {
 
         @FXML
         public Label HomePageNameLabel;
@@ -43,40 +46,6 @@ public class HomePageControllers {
         public Button MyFiles;
 
 
-        public HomePageControllers() {
-
-                HomePageNameLabel = new Label();
-
-                // use DatabaseConnection class to establish connection between homePageNAme and database
-                
-                Connection con = null;
-                PreparedStatement pst = null;
-                ResultSet rs = null;
-
-                try {
-                        // connecting to database to access username which is being showed on home page.....
-                        con = DatabaseConnection.getConnection();
-                        //create query
-                        String query = "select username from users where email = ?;";
-
-                        //open the prepared statement
-                        pst = con.prepareStatement(query);
-                        pst.setString(1, login.loginEmailId);
-                        rs = pst.executeQuery();
-
-                        System.out.println(pst);
-
-                        //display the results
-                        while(rs.next()){
-                                System.out.println(rs.getString("username"));
-                                HomePageNameLabel.setText(rs.getString("username"));
-                        }
-                        pst.close();
-
-                } catch (SQLException e) {
-                        e.printStackTrace();
-                }
-        }
         @FXML
         public void onClickNewFolder(ActionEvent event){
                 Loader loader = new Loader("../Views/newFolder.fxml","New Folder");
@@ -141,5 +110,33 @@ public class HomePageControllers {
         }
 
 
+        @Override
+        public void initialize(URL url, ResourceBundle resourceBundle) {
+                Connection con = null;
+                PreparedStatement pst = null;
+                ResultSet rs = null;
+                try {
+                        // connecting to database to access username which is being showed on home page.....
+                        con = DatabaseConnection.getConnection();
+                        //create query
+                        String query = "select username from users where email = ?;";
 
+                        //open the prepared statement
+                        pst = con.prepareStatement(query);
+                        pst.setString(1, login.loginEmailId);
+                        rs = pst.executeQuery();
+
+                        System.out.println(pst);
+
+                        //display the results
+                        while(rs.next()){
+                                System.out.println(rs.getString("username"));
+                                HomePageNameLabel.setText(rs.getString("username"));
+                        }
+                        pst.close();
+
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+        }
 }

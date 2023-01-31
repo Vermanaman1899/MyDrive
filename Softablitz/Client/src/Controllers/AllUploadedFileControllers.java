@@ -18,7 +18,7 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class AllUploadedFileControllers implements Initializable {
+public class AllUploadedFileControllers extends FileViewControllers implements Initializable {
 
     private Connection con = null;
     private PreparedStatement pst = null;
@@ -45,6 +45,9 @@ public class AllUploadedFileControllers implements Initializable {
     Integer index;
     @FXML
     void getFile(MouseEvent event){
+
+        Loader loader = new Loader("../Views/fileView.fxml", "File");
+
         index = MyFilesTable.getSelectionModel().getSelectedIndex();
 
         if(index <= -1){
@@ -61,16 +64,19 @@ public class AllUploadedFileControllers implements Initializable {
             ResultSet rs = pst.executeQuery();
 
 //            FileViewControllers fvc = new FileViewControllers();
-            FileViewControllers.FileNameArea.setText(columnFileName.getCellData(index));
+            System.out.println(columnFileName.getCellData(index));
+
+            static_FileNameLabel.setText(columnFileName.getCellData(index));
             while(rs.next()){
-                FileViewControllers.FileContentArea.setText("filecontent");
+                System.out.println(rs.getString("filecontent"));
+                static_FileContentLabel.setText(rs.getString("filecontent"));
             }
         }
         catch(SQLException e){
             e.printStackTrace();
         }
 
-        Loader loader = new Loader("../Views/fileView.fxml", "File");
+//        Loader loader = new Loader("../Views/fileView.fxml", "File");
 
     }
 
