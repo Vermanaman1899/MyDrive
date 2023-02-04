@@ -53,7 +53,7 @@ public class HomePageControllers implements Initializable {
         }
 
         public void onClickPersonalInfo(ActionEvent actionEvent){
-               Loader loader = new Loader("../Views/personalinfo.fxml","Profile Page");
+               Loader loader = new Loader("../Views/personalinfo.fxml", PersonalInfo,"Profile Page");
         }
 
         public void onClickMyFolders(){}
