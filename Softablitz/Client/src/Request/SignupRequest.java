@@ -11,7 +11,7 @@ public class SignupRequest extends AppRequest implements Serializable {
     private String name;
 
 
-    public SignupRequest(String name, String username, String email, String password, String phone) {
+    public SignupRequest(String name, String email, String username, String password, String phone) {
         this.email = email;
         this.username = username;
         this.name = name;

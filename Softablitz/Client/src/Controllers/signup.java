@@ -61,7 +61,7 @@ public class signup {
             } else {
                 System.out.println("Signup success!");
 //                signupEmailId = SignupEmailID.getText();
-                Loader loader = new Loader("../Views/home page.fxml", Signup, "Home Page");
+                Loader loader = new Loader("../Views/login.fxml", Signup, "Login");
 
             }
         } else {
