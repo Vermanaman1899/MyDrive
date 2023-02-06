@@ -72,7 +72,7 @@ public class FileInfoControllers {
             // firstly connection must be present from database ::::
             Connection con = DatabaseConnection.getConnection();
 
-            PreparedStatement pst = con.prepareStatement("insert into fileslist (filename,filetype,uploadedby,dateofupload,favourite,access,sizeoffile,filecontent) values(?,?,?,?,?,?,?,?)");
+            PreparedStatement pst = con.prepareStatement("insert into fileslist (filename,filetype,uploadedby,dateofupload,favourite,access,sizeoffile,filecontent,trash) values(?,?,?,?,?,?,?,?,0)");
             // prepared statement entries :
             // 1.filename , 2.filetype , 3.uploadedby , 4.dateofupload , 5.favourite , 6.access , 7.sizeoffile , 8.filecontent
 

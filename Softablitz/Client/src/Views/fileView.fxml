@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
@@ -8,6 +9,6 @@
    <children>
       <Label fx:id="FileNameLabel" layoutX="14.0" layoutY="21.0" prefHeight="26.0" prefWidth="175.0" text="Selected file name" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e4e7eb" height="334.0" layoutX="16.0" layoutY="53.0" stroke="BLACK" strokeType="INSIDE" width="571.0" />
-      <Label fx:id="FileContentLabel" layoutX="17.0" layoutY="54.0" prefHeight="334.0" prefWidth="571.0" text="File content" />
+      <TextArea fx:id="FileContentTextArea" layoutX="20.0" layoutY="58.0" prefHeight="325.0" prefWidth="563.0" promptText="File Content" />
    </children>
 </AnchorPane>

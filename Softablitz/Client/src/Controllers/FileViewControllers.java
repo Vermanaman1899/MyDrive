@@ -14,30 +14,14 @@ public class FileViewControllers implements Initializable {
     @FXML
     private Label FileNameLabel;
     @FXML
-    private Label FileContentLabel;
+    private TextArea FileContentTextArea;
 
     public static Label static_FileNameLabel;
-    public static Label static_FileContentLabel;
-
-//    public TextField getFileNameArea() {
-//        return FileNameArea;
-//    }
-
-//    public void setFileNameArea(TextField fileNameArea) {
-//        FileNameArea = fileNameArea;
-//    }
-
-//    public TextArea getFileContentArea() {
-//        return FileContentArea;
-//    }
-
-//    public void setFileContentArea(TextArea fileContentArea) {
-//        FileContentArea = fileContentArea;
-//    }
+    public static TextArea static_FileContentTextArea;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         static_FileNameLabel = FileNameLabel;
-        static_FileContentLabel = FileContentLabel;
+        static_FileContentTextArea = FileContentTextArea;
     }
 }
