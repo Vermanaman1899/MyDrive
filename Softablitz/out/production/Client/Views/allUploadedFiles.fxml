@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -13,7 +14,7 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <TableView fx:id="MyFilesTable" layoutX="42.0" layoutY="77.0" onMouseClicked="#getFile" prefHeight="281.0" prefWidth="513.0">
+      <TableView fx:id="MyFilesTable" layoutX="43.0" layoutY="68.0" prefHeight="281.0" prefWidth="513.0">
         <columns>
           <TableColumn fx:id="columnFileName" prefWidth="220.66665649414062" text="File Name" />
           <TableColumn fx:id="columnDate" prefWidth="145.33331298828125" text="Date" />
@@ -21,5 +22,8 @@
             <TableColumn fx:id="columnFileSize" prefWidth="78.0" text="Size" />
         </columns>
       </TableView>
+      <Button fx:id="MoveToTrash" layoutX="490.0" layoutY="358.0" mnemonicParsing="false" onAction="#onClickDelete" prefHeight="25.0" prefWidth="65.0" text="Delete" />
+      <Button fx:id="OpenFile" layoutX="43.0" layoutY="358.0" mnemonicParsing="false" onAction="#onClickOpen" prefHeight="25.0" prefWidth="65.0" text="Open" />
+      <Button fx:id="Star" layoutX="490.0" layoutY="28.0" mnemonicParsing="false" onAction="#onClickStar" prefHeight="25.0" prefWidth="65.0" text="Star" />
    </children>
 </AnchorPane>

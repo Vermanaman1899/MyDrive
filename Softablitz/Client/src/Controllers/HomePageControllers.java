@@ -60,7 +60,7 @@ public class HomePageControllers implements Initializable {
 
         public void onClickTrashFiles(){
                 try {
-                        Loader loader = new Loader("../Views/trash.fxml", TrashFiles, "Trash");
+                        Loader loader = new Loader("../Views/trash.fxml", "Trash");
                 }
                 catch( Exception e){
                         e.printStackTrace();
@@ -70,7 +70,7 @@ public class HomePageControllers implements Initializable {
 
         public void onClickFavourites() {
                 try {
-                        Loader loader = new Loader("../Views/favourites.fxml","Favorites Page");
+                        Loader loader = new Loader("../Views/favorites.fxml","Favorites Page");
                 }
                 catch( Exception e){
                         e.printStackTrace();
