@@ -14,7 +14,7 @@ public class DatabaseConnection {
             return con;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/softablitz", "root", "#NitinMySqlPassword0500");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/softablitz", "root", "naman@mysql123");
             System.out.println("Database Connected");
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);

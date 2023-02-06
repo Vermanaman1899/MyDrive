@@ -12,24 +12,24 @@
       <AnchorPane layoutX="137.0" layoutY="38.0" prefHeight="337.0" prefWidth="441.0">
          <children>
             <Button fx:id="CreateNewFolder" layoutX="378.0" layoutY="324.0" mnemonicParsing="false" onAction="#onClickNewFolder" text="New Folder" />
-            <Label layoutX="148.0" layoutY="40.0" prefHeight="52.0" prefWidth="184.0" text="     Welcome " textAlignment="CENTER">
+            <Label alignment="CENTER" layoutX="166.0" layoutY="57.0" prefHeight="46.0" prefWidth="145.0" text="Welcome " textAlignment="CENTER">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="212.0" layoutY="182.0" prefHeight="26.0" prefWidth="56.0" text="to">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutX="212.0" layoutY="175.0" prefHeight="26.0" prefWidth="56.0" text="to">
+            <Label alignment="CENTER" layoutX="100.0" layoutY="221.0" prefHeight="61.0" prefWidth="277.0" text="your Drive Account!">
                <font>
-                  <Font size="22.0" />
+                  <Font size="31.0" />
                </font>
             </Label>
-            <Label layoutX="140.0" layoutY="221.0" prefHeight="61.0" prefWidth="200.0" text="your Drive Account">
+            <Label fx:id="HomePageNameLabel" alignment="CENTER" layoutX="177.0" layoutY="119.0" prefHeight="32.0" prefWidth="123.0" text="Name!" textAlignment="CENTER">
                <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-            <Label fx:id="HomePageNameLabel" layoutX="146.0" layoutY="102.0" prefHeight="61.0" prefWidth="157.0" text="        Name" textAlignment="CENTER">
-               <font>
-                  <Font size="21.0" />
+                  <Font size="31.0" />
                </font>
             </Label>
             <Button fx:id="UploadFile" layoutX="278.0" layoutY="324.0" mnemonicParsing="false" onAction="#onClickNewFile" prefHeight="25.0" prefWidth="77.0" text="New File" />
