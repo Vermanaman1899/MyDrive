@@ -38,6 +38,8 @@ public class FileInfoControllers {
     @FXML
     private AnchorPane scenePane;
 
+    private int type = 0;
+
 
     public void onClickPrivateRB(){}
     public void onClickPublicRB(){}
@@ -72,9 +74,9 @@ public class FileInfoControllers {
             // firstly connection must be present from database ::::
             Connection con = DatabaseConnection.getConnection();
 
-            PreparedStatement pst = con.prepareStatement("insert into fileslist (filename,filetype,uploadedby,dateofupload,favourite,access,sizeoffile,filecontent,trash) values(?,?,?,?,?,?,?,?,0)");
+            PreparedStatement pst = con.prepareStatement("insert into fileslist (filename,filetype,uploadedby,dateofupload,favourite,access,sizeoffile,filecontent,image_content,trash) values(?,?,?,?,?,?,?,?,?,0)");
             // prepared statement entries :
-            // 1.filename , 2.filetype , 3.uploadedby , 4.dateofupload , 5.favourite , 6.access , 7.sizeoffile , 8.filecontent
+            // 1.filename , 2.filetype , 3.uploadedby , 4.dateofupload , 5.favourite , 6.access , 7.sizeoffile , 8.filecontent , 9. trash , 10.image_content
 
             Path path = Paths.get(FileLocation.getText());
 
@@ -94,9 +96,35 @@ public class FileInfoControllers {
 
             pst.setLong(7,fileLengthInKb); // might be possible it returns zero size of selected file , might create some issue
 
-            pst.setCharacterStream(8, new FileReader(file), fileLength);
-            pst.executeUpdate();
-            System.out.println("File stored in database");
+            if(fileName.substring(fileName.lastIndexOf(".")+1).equals("txt"))
+                type = 1;
+
+            else if(fileName.substring(fileName.lastIndexOf(".")+1).equals("jpg"))
+                type = 2;
+
+            System.out.println("value of type is:::"+type);
+            System.out.println(fileName.substring(fileName.lastIndexOf(".")+1));
+
+            switch (type) {
+                case 1: // text file
+                    System.out.println("Case one selected which is for txt file");
+                    pst.setCharacterStream(8, new FileReader(file), fileLength);
+                    pst.setInt(9,0);
+                    pst.executeUpdate();
+                    System.out.println("File stored in database");
+                    break;
+
+                case 2: // image file
+                    System.out.println("Case two selected for image");
+                    pst.setString(8,"null");
+                    FileInputStream fis = new FileInputStream(file);
+                    pst.setBinaryStream(9, fis, fis.available());
+                    pst.executeUpdate();
+                    System.out.println("Image stored in database");
+                    break;
+
+
+            }
 
 
         }
@@ -104,8 +132,12 @@ public class FileInfoControllers {
             e.printStackTrace();
         }
         // after successful upload close the window
-        Stage stage = (Stage) scenePane.getScene().getWindow();
-        stage.close();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("File upload successful");
+        if(alert.showAndWait().get() == ButtonType.OK) {
+            Stage stage = (Stage) scenePane.getScene().getWindow();
+            stage.close();
+        }
     }
 
 
