@@ -2,6 +2,7 @@ package Controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -17,6 +18,8 @@ import java.util.ResourceBundle;
 public class FavoritesControllers extends FileViewControllers implements Initializable {
     @FXML
     public Button Unstar;
+    @FXML
+    public Button BacktoHS;
     private Connection con = null;
     private PreparedStatement pst = null;
     private ResultSet rs = null;
@@ -66,9 +69,6 @@ public class FavoritesControllers extends FileViewControllers implements Initial
 
     }
 
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         con = DatabaseConnection.getConnection();
@@ -101,6 +101,10 @@ public class FavoritesControllers extends FileViewControllers implements Initial
             e.printStackTrace();
         }
         FavoriteFilesTable.setItems(data);
+    }
+
+    public void onClickBack(ActionEvent actionEvent) {
+        Loader loader = new Loader("../Views/home page.fxml", BacktoHS, "Home Page");
     }
 }
 
