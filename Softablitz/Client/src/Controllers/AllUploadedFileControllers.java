@@ -1,8 +1,10 @@
 package Controllers;
 
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -21,19 +23,16 @@ public class AllUploadedFileControllers extends FileViewControllers implements I
     @FXML
     private Button MoveToTrash;
     @FXML
+    private Button BackToHS;
+    @FXML
     private Button Star;
+
+    @FXML
+    private TextField SearchBox;
 
     private Connection con = null;
     private PreparedStatement pst = null;
     private ResultSet rs = null;
-    private ObservableList<FileList> data;
-
-
-
-
-
-
-
 
     @FXML
     private TableView<FileList> MyFilesTable;
@@ -49,14 +48,16 @@ public class AllUploadedFileControllers extends FileViewControllers implements I
 
     @FXML
     private TableColumn<FileList, String> columnFileType;
+
+
+    private ObservableList<FileList> data;
+
     Integer index;
     @FXML
     void onClickOpen(){
 
         Loader loader = new Loader("../Views/fileView.fxml", "File");
-
         index = MyFilesTable.getSelectionModel().getSelectedIndex();
-
         if(index <= -1){
             return;
         }
@@ -95,7 +96,6 @@ public class AllUploadedFileControllers extends FileViewControllers implements I
             Connection con = DatabaseConnection.getConnection();
             PreparedStatement pst = null;
             ResultSet rs = null;
-
             String query = "update fileslist set trash = 1 where filename = ? and uploadedby = ?";
 
             try {
@@ -157,6 +157,30 @@ public class AllUploadedFileControllers extends FileViewControllers implements I
             while(rs.next()){
                 data.add(new FileList(rs.getString("filename") , rs.getDate("dateofupload"), rs.getString("filetype"), rs.getString("sizeoffile")));
             }
+
+            FilteredList <FileList> filteredData = new FilteredList<>(data, b-> true);
+
+            SearchBox.textProperty().addListener((observableValue, oldValue, newValue) -> {
+                filteredData.setPredicate(data -> {
+                    //If empty, display all
+                    if (newValue == null || newValue.isEmpty()) {
+                        return true;
+                    }
+
+                    //Compare the data with search box text
+                    String SearchFilter = newValue.toLowerCase();
+
+                    if (data.getName().toLowerCase().indexOf(SearchFilter) != -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
+            });
+
+            SortedList<FileList> sortedData=new SortedList<>(filteredData);
+            sortedData.comparatorProperty().bind(MyFilesTable.comparatorProperty());
+            MyFilesTable.setItems(sortedData);
         }
         catch(SQLException e){
             System.out.println(pst);
@@ -165,6 +189,9 @@ public class AllUploadedFileControllers extends FileViewControllers implements I
 
             e.printStackTrace();
         }
-        MyFilesTable.setItems(data);
+    }
+
+    public void onClickBack(ActionEvent actionEvent) {
+        Loader loader = new Loader("../Views/home page.fxml", BackToHS, "Home Page");
     }
 }

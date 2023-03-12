@@ -16,12 +16,12 @@
             <Image url="@../favorite.png" />
          </image>
       </ImageView>
-      <Label layoutX="54.0" layoutY="81.0" prefHeight="40.0" prefWidth="117.0" text="Favorites">
+      <Label layoutX="33.0" layoutY="76.0" prefHeight="40.0" prefWidth="117.0" text="Favorites">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <TableView fx:id="FavoriteFilesTable" layoutX="205.0" layoutY="71.0" prefHeight="269.0" prefWidth="356.0">
+      <TableView fx:id="FavoriteFilesTable" layoutX="204.0" layoutY="52.0" prefHeight="295.0" prefWidth="356.0">
         <columns>
           <TableColumn fx:id="columnFileName" prefWidth="148.666748046875" text="File Name" />
           <TableColumn fx:id="columnDate" prefWidth="91.333251953125" text="Date" />
@@ -29,6 +29,7 @@
             <TableColumn fx:id="columnSize" prefWidth="50.00006103515625" text="Size" />
         </columns>
       </TableView>
-      <Button fx:id="Unstar" layoutX="62.0" layoutY="347.0" mnemonicParsing="false" onAction="#onClickUnstar" prefHeight="25.0" prefWidth="73.0" text="Unstar" />
+      <Button fx:id="Unstar" layoutX="33.0" layoutY="347.0" mnemonicParsing="false" onAction="#onClickUnstar" prefHeight="25.0" prefWidth="73.0" text="Unstar" />
+      <Button fx:id="BacktoHS" layoutX="33.0" layoutY="32.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="25.0" prefWidth="73.0" text="Back" />
    </children>
 </AnchorPane>

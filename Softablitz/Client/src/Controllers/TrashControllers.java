@@ -20,6 +20,9 @@ public class TrashControllers implements Initializable {
 
     @FXML
     private Button PermanentDelete ;
+
+    @FXML
+    private Button BacktoHS;
     @FXML
     private Button RestoreFile ;
     private int selectedIndex = -1;
@@ -117,5 +120,9 @@ public class TrashControllers implements Initializable {
         }catch (SQLException e){
             e.printStackTrace();
         }
+    }
+
+    public void onClickBack(ActionEvent actionEvent) {
+        Loader loader = new Loader("../Views/home page.fxml", BacktoHS, "Home Page");
     }
 }

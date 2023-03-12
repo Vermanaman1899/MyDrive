@@ -12,18 +12,19 @@
    <children>
       <AnchorPane layoutX="10.0" layoutY="13.0" prefHeight="372.0" prefWidth="231.0">
          <children>
-            <ImageView fitHeight="319.0" fitWidth="200.0" layoutX="16.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="319.0" fitWidth="200.0" layoutX="16.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../download.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" layoutY="24.0" prefHeight="36.0" prefWidth="111.0" text="Trash" textAlignment="CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" layoutY="57.0" prefHeight="36.0" prefWidth="111.0" text="Trash" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
             <Button fx:id="PermanentDelete" layoutX="16.0" layoutY="318.0" mnemonicParsing="false" onAction="#onClickDelete" prefHeight="25.0" prefWidth="64.0" text="Delete" />
             <Button fx:id="RestoreFile" layoutX="153.0" layoutY="318.0" mnemonicParsing="false" onAction="#onClickRestore" prefHeight="25.0" prefWidth="64.0" text="Restore" />
+            <Button fx:id="BacktoHS" layoutX="16.0" layoutY="21.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="25.0" prefWidth="64.0" text="Back" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="259.0" layoutY="54.0" prefHeight="291.0" prefWidth="276.0">

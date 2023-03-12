@@ -60,7 +60,7 @@ public class HomePageControllers implements Initializable {
 
         public void onClickTrashFiles(){
                 try {
-                        Loader loader = new Loader("../Views/trash.fxml", "Trash");
+                        Loader loader = new Loader("../Views/trash.fxml",TrashFiles, "Trash");
                 }
                 catch( Exception e){
                         e.printStackTrace();
@@ -70,16 +70,16 @@ public class HomePageControllers implements Initializable {
 
         public void onClickFavourites() {
                 try {
-                        Loader loader = new Loader("../Views/favorites.fxml","Favorites Page");
+                        Loader loader = new Loader("../Views/favorites.fxml",Favorites,"Favorites Page");
                 }
                 catch( Exception e){
                         e.printStackTrace();
-                        System.out.println("Sorry! CAn't Load page at this time");
+                        System.out.println("Sorry! Can't Load page at this time");
                 }
         }
         public void onClickAbout(){
                 try {
-                        Loader loader = new Loader("../Views/About Drive.fxml", "About");
+                        Loader loader = new Loader("../Views/About Drive.fxml", About, "About");
                 }
                 catch( Exception e){
                         e.printStackTrace();
@@ -101,7 +101,7 @@ public class HomePageControllers implements Initializable {
         }
 
         public void onClickMyFiles(){
-                Loader loader = new Loader("../Views/allUploadedFiles.fxml", "My Files");
+              Loader loader = new Loader("../Views/allUploadedFiles.fxml", MyFiles, "My Files");
         }
 
         public void onClickNewFile(){
