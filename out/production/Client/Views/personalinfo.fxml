@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -24,24 +25,20 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Label layoutX="289.0" layoutY="52.0" prefHeight="36.0" prefWidth="251.0" text="Personal Information" textAlignment="CENTER" underline="true">
+      <Label layoutX="296.0" layoutY="49.0" prefHeight="36.0" prefWidth="251.0" text="Personal Information" textAlignment="CENTER" underline="true">
          <font>
-            <Font size="25.0" />
+            <Font name="Baskerville Old Face" size="25.0" />
          </font>
       </Label>
-      <Label fx:id="ProfileNameLabel" layoutX="422.0" layoutY="120.0" prefHeight="25.0" prefWidth="145.0" text="Name" textAlignment="RIGHT">
+      <Label fx:id="ProfileEmailLabel" layoutX="415.0" layoutY="235.0" prefHeight="25.0" prefWidth="205.0" text="Email id" textAlignment="CENTER">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label fx:id="ProfileEmailLabel" layoutX="421.0" layoutY="262.0" prefHeight="25.0" prefWidth="205.0" text="Email id" textAlignment="CENTER">
+      <Label fx:id="ProfileUsernameLabel" layoutX="415.0" layoutY="155.0" prefHeight="25.0" prefWidth="212.0" text="Username" textAlignment="CENTER">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label fx:id="ProfileUsernameLabel" layoutX="422.0" layoutY="172.0" prefHeight="25.0" prefWidth="212.0" text="Username" textAlignment="CENTER">
-         <font>
-            <Font size="16.0" />
-         </font></Label>
-      <Label fx:id="ProfileMobileLabel" layoutX="421.0" layoutY="217.0" prefHeight="25.0" prefWidth="123.0" text="Mobile Number" textAlignment="CENTER">
+      <Label fx:id="ProfileMobileLabel" layoutX="415.0" layoutY="195.0" prefHeight="25.0" prefWidth="123.0" text="Mobile Number" textAlignment="CENTER">
          <font>
             <Font size="16.0" />
          </font></Label>
@@ -50,30 +47,45 @@
             <Font name="Baskerville Old Face" size="39.0" />
          </font>
       </Label>
-      <Button fx:id="EditProfile" layoutX="329.0" layoutY="327.0" mnemonicParsing="false" onAction="#OnClickEdit" prefHeight="25.0" prefWidth="64.0" text="Edit" />
-      <Button fx:id="SaveProfile" layoutX="442.0" layoutY="327.0" mnemonicParsing="false" onAction="#OnClickSave" prefHeight="25.0" prefWidth="64.0" text="Save" />
-      <Label fx:id="ProfileNameLabel2" layoutX="315.0" layoutY="120.0" prefHeight="25.0" prefWidth="48.0" text="Name" textAlignment="RIGHT">
+      <Button fx:id="EditProfile" layoutX="313.0" layoutY="328.0" mnemonicParsing="false" onAction="#OnClickEdit" prefHeight="25.0" prefWidth="64.0" text="Edit" />
+      <Button fx:id="SaveProfile" layoutX="419.0" layoutY="328.0" mnemonicParsing="false" onAction="#OnClickSave" prefHeight="25.0" prefWidth="64.0" text="Save" />
+      <Label fx:id="ProfileNameLabel2" alignment="CENTER" layoutX="315.0" layoutY="115.0" prefHeight="25.0" prefWidth="48.0" text="Name" textAlignment="RIGHT">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="ProfileEmailLabel1" layoutX="307.0" layoutY="262.0" prefHeight="25.0" prefWidth="64.0" text="Email id" textAlignment="CENTER">
+      <Label fx:id="ProfileEmailLabel1" alignment="CENTER" layoutX="306.0" layoutY="235.0" prefHeight="25.0" prefWidth="64.0" text="Email id" textAlignment="CENTER">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="ProfileUsernameLabel1" layoutX="299.0" layoutY="172.0" prefHeight="25.0" prefWidth="79.0" text="Username" textAlignment="CENTER">
+      <Label fx:id="ProfileNameLabel" layoutX="415.0" layoutY="115.0" prefHeight="25.0" prefWidth="145.0" text="Name" textAlignment="RIGHT">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label fx:id="ProfileUsernameLabel1" alignment="CENTER" layoutX="299.0" layoutY="155.0" prefHeight="25.0" prefWidth="79.0" text="Username">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="ProfileMobileLabel1" layoutX="277.0" layoutY="217.0" prefHeight="25.0" prefWidth="123.0" text="Mobile Number" textAlignment="CENTER">
+      <Label fx:id="ProfileMobileLabel1" alignment="CENTER" layoutX="275.0" layoutY="195.0" prefHeight="25.0" prefWidth="123.0" text="Mobile Number">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="NameEdit" layoutX="409.0" layoutY="120.0" prefHeight="25.0" prefWidth="156.0" promptText="Enter new Name" visible="false" />
-      <TextField fx:id="UsernameEdit" layoutX="409.0" layoutY="172.0" prefHeight="25.0" prefWidth="156.0" promptText="Enter new Username" visible="false" />
-      <TextField fx:id="MobileEdit" layoutX="409.0" layoutY="217.0" prefHeight="25.0" prefWidth="156.0" promptText="Enter new Mobile Number" visible="false" />
+      <TextField fx:id="NameEdit" layoutX="415.0" layoutY="115.0" prefHeight="25.0" prefWidth="156.0" promptText="Enter new Name" visible="false" />
+      <TextField fx:id="UsernameEdit" layoutX="415.0" layoutY="155.0" prefHeight="25.0" prefWidth="156.0" promptText="Enter new Username" visible="false" />
+      <TextField fx:id="MobileEdit" layoutX="415.0" layoutY="195.0" prefHeight="25.0" prefWidth="156.0" promptText="Enter new Mobile Number" visible="false" />
+      <Label fx:id="ProfilePasswordLabel1" alignment="CENTER" layoutX="283.0" layoutY="275.0" prefHeight="25.0" prefWidth="107.0" text="Password" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="ProfilePasswordLabel" layoutX="415.0" layoutY="275.0" prefHeight="25.0" prefWidth="205.0" text="Password" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="PasswordEdit" layoutX="415.0" layoutY="275.0" promptText="Enter new Password" visible="false" />
    </children>
 </AnchorPane>
