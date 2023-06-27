@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.NewFolderControllers">
+   <children>
+      <Label layoutX="113.0" layoutY="135.0" prefHeight="49.0" prefWidth="128.0" text="Folder Name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="FolderName" layoutX="241.0" layoutY="147.0" promptText="Enter Folder Name" />
+      <Button fx:id="Done" layoutX="223.0" layoutY="236.0" mnemonicParsing="false" onAction="#onClickDone" prefHeight="25.0" prefWidth="70.0" text="Done" />
+      <Button fx:id="Cancel" layoutX="351.0" layoutY="236.0" mnemonicParsing="false" onAction="#onClickCancel" prefHeight="25.0" prefWidth="70.0" text="Cancel" />
+   </children>
+</AnchorPane>

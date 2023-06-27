@@ -28,6 +28,9 @@ public class AllUploadedFileControllers extends FileViewControllers implements I
     private Button Star;
 
     @FXML
+    private Button Download;
+
+    @FXML
     private TextField SearchBox;
 
     private Connection con = null;
@@ -193,5 +196,10 @@ public class AllUploadedFileControllers extends FileViewControllers implements I
 
     public void onClickBack(ActionEvent actionEvent) {
         Loader loader = new Loader("../Views/home page.fxml", BackToHS, "Home Page");
+    }
+
+    @FXML
+    void onClickDownload(ActionEvent actionEvent) {
+
     }
 }
