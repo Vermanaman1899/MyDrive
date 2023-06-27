@@ -19,7 +19,6 @@ public class FileInfoControllers {
 
     @FXML
     public TextField FileLocation;
-
     @FXML
     private RadioButton PrivateRButton;
     @FXML

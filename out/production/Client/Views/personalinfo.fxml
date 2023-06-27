@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PersonalInfoControllers">
+   <children>
+      <AnchorPane layoutX="53.0" layoutY="33.0" prefHeight="225.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="BackToHS" layoutX="-37.0" layoutY="-14.0" mnemonicParsing="false" onAction="#OnClickBack" prefHeight="15.0" prefWidth="79.0" text="Back">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="212.0" fitWidth="212.0" layoutX="-21.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../personal Info.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="289.0" layoutY="52.0" prefHeight="36.0" prefWidth="251.0" text="Personal Information" textAlignment="CENTER" underline="true">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="ProfileNameLabel" layoutX="422.0" layoutY="120.0" prefHeight="25.0" prefWidth="145.0" text="Name" textAlignment="RIGHT">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label fx:id="ProfileEmailLabel" layoutX="421.0" layoutY="262.0" prefHeight="25.0" prefWidth="205.0" text="Email id" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label fx:id="ProfileUsernameLabel" layoutX="422.0" layoutY="172.0" prefHeight="25.0" prefWidth="212.0" text="Username" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label fx:id="ProfileMobileLabel" layoutX="421.0" layoutY="217.0" prefHeight="25.0" prefWidth="123.0" text="Mobile Number" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label fx:id="ProfileNameLabel1" layoutX="92.0" layoutY="287.0" prefHeight="25.0" prefWidth="110.0" text="Profile" textAlignment="CENTER">
+         <font>
+            <Font name="Baskerville Old Face" size="39.0" />
+         </font>
+      </Label>
+      <Button fx:id="EditProfile" layoutX="329.0" layoutY="327.0" mnemonicParsing="false" onAction="#OnClickEdit" prefHeight="25.0" prefWidth="64.0" text="Edit" />
+      <Button fx:id="SaveProfile" layoutX="442.0" layoutY="327.0" mnemonicParsing="false" onAction="#OnClickSave" prefHeight="25.0" prefWidth="64.0" text="Save" />
+      <Label fx:id="ProfileNameLabel2" layoutX="315.0" layoutY="120.0" prefHeight="25.0" prefWidth="48.0" text="Name" textAlignment="RIGHT">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="ProfileEmailLabel1" layoutX="307.0" layoutY="262.0" prefHeight="25.0" prefWidth="64.0" text="Email id" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="ProfileUsernameLabel1" layoutX="299.0" layoutY="172.0" prefHeight="25.0" prefWidth="79.0" text="Username" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="ProfileMobileLabel1" layoutX="277.0" layoutY="217.0" prefHeight="25.0" prefWidth="123.0" text="Mobile Number" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="NameEdit" layoutX="409.0" layoutY="120.0" prefHeight="25.0" prefWidth="156.0" promptText="Enter new Name" visible="false" />
+      <TextField fx:id="UsernameEdit" layoutX="409.0" layoutY="172.0" prefHeight="25.0" prefWidth="156.0" promptText="Enter new Username" visible="false" />
+      <TextField fx:id="MobileEdit" layoutX="409.0" layoutY="217.0" prefHeight="25.0" prefWidth="156.0" promptText="Enter new Mobile Number" visible="false" />
+   </children>
+</AnchorPane>

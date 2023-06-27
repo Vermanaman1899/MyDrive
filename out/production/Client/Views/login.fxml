@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="388.0" prefWidth="581.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.login">
+   <children>
+      <AnchorPane prefHeight="388.0" prefWidth="213.0">  
+         <children>
+            <ImageView fitHeight="374.0" fitWidth="213.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images.jpg" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <AnchorPane layoutX="211.0" layoutY="7.0" prefHeight="382.0" prefWidth="364.0" style="-fx-background-color: GAINSBORO;">
+         <children>
+            <PasswordField fx:id="LoginPassword" layoutX="175.0" layoutY="211.0" promptText="PASSWORD" />
+            <ImageView fitHeight="103.0" fitWidth="94.0" layoutX="135.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../lock.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="40.0" layoutY="144.0" opacity="0.9" prefHeight="30.0" prefWidth="141.0" text="Email ID">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="40.0" layoutY="208.0" opacity="0.9" prefHeight="30.0" prefWidth="141.0" text="Password">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="LoginEmailID" layoutX="175.0" layoutY="147.0" promptText="Email ID" />
+            <Button fx:id="Login" layoutX="139.0" layoutY="275.0" mnemonicParsing="false" onAction="#OnClickLogin" prefHeight="30.0" prefWidth="71.0" text="Login" />
+            <Text layoutX="75.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account? " wrappingWidth="127.27734375" />
+            <Button fx:id="GotoSignup" layoutX="214.0" layoutY="317.0" mnemonicParsing="false" onAction="#SwitchToSignup" text="Click here!" />
+            <Label fx:id="wronglogin" layoutX="167.0" layoutY="108.0" />
+         </children></AnchorPane>
+      <DialogPane />
+   </children>
+</AnchorPane>

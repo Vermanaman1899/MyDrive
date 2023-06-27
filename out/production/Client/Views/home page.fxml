@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane fx:id="scenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HomePageControllers">
+   <children>
+      <AnchorPane layoutX="137.0" layoutY="38.0" prefHeight="337.0" prefWidth="441.0">
+         <children>
+            <Button fx:id="CreateNewFolder" layoutX="378.0" layoutY="324.0" mnemonicParsing="false" onAction="#onClickNewFolder" text="New Folder" />
+            <Label alignment="CENTER" layoutX="166.0" layoutY="57.0" prefHeight="46.0" prefWidth="145.0" text="Welcome " textAlignment="CENTER">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="212.0" layoutY="182.0" prefHeight="26.0" prefWidth="56.0" text="to">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="100.0" layoutY="221.0" prefHeight="61.0" prefWidth="277.0" text="your Drive Account!">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+            <Label fx:id="HomePageNameLabel" alignment="CENTER" layoutX="177.0" layoutY="119.0" prefHeight="32.0" prefWidth="123.0" text="Name!" textAlignment="CENTER">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+            <Button fx:id="UploadFile" layoutX="278.0" layoutY="324.0" mnemonicParsing="false" onAction="#onClickNewFile" prefHeight="25.0" prefWidth="77.0" text="New File" />
+         </children>
+      </AnchorPane>
+      <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drive Account " textAlignment="CENTER" wrappingWidth="122.80344200134277">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="14.0" layoutY="111.0" prefHeight="305.0" prefWidth="145.0">
+         <children>
+            <Button fx:id="PersonalInfo" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClickPersonalInfo" prefHeight="25.0" prefWidth="108.0" text="Personal info" textAlignment="CENTER" textFill="#070000" />
+            <Button fx:id="TrashFiles" layoutX="8.0" layoutY="107.0" mnemonicParsing="false" onAction="#onClickTrashFiles" prefHeight="25.0" prefWidth="108.0" text="Trash Files" />
+            <Button fx:id="Favorites" layoutX="8.0" layoutY="153.0" mnemonicParsing="false" onAction="#onClickFavourites" prefHeight="25.0" prefWidth="108.0" text="Favorites" />
+            <Button fx:id="About" layoutX="5.0" layoutY="199.0" mnemonicParsing="false" onAction="#onClickAbout" prefHeight="25.0" prefWidth="108.0" text="About" />
+            <Button fx:id="MyFolders" layoutX="8.0" layoutY="61.0" mnemonicParsing="false" onAction="#onClickMyFolders" prefHeight="25.0" prefWidth="108.0" text="My Folders" />
+            <Button fx:id="MyFiles" layoutX="5.0" layoutY="244.0" mnemonicParsing="false" onAction="#onClickMyFiles" prefHeight="25.0" prefWidth="108.0" text="My Files" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="LogOut" layoutX="536.0" layoutY="13.0" mnemonicParsing="false" onAction="#OnClickLogOut" text="LogOut" />
+      <TextFlow prefHeight="105.0" prefWidth="145.0" />
+   </children>
+</AnchorPane>

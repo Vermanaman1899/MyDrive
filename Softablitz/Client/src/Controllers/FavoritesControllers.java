@@ -96,8 +96,6 @@ public class FavoritesControllers extends FileViewControllers implements Initial
         catch(SQLException e){
             System.out.println(pst);
             System.out.println(rs);
-
-
             e.printStackTrace();
         }
         FavoriteFilesTable.setItems(data);
