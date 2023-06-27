@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.About_DriveControllers">
    <children>
-      <TextArea layoutX="46.0" layoutY="46.0" prefHeight="307.0" prefWidth="507.0" text="&#10;&#10;////About Drive :::::::::::::::::::::::::::::&#10;&#10;This is drive created by team Pionel Devsi .&#10;In this drive you can create your Account, upload your file, set that&#10;favorite and many more.&#10;&#10;&#10;Contributers :&#10;&#10;*1.Naman Verma &#10;*2.Nitin&#10; &#10;">
-         <font>
-            <Font name="Arial Black" size="12.0" />
-         </font></TextArea>
       <Button fx:id="SwitchToHomePage" layoutX="502.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickHomePage" text="Home Page" textAlignment="CENTER" />
+      <Label layoutX="51.0" layoutY="33.0" prefHeight="317.0" prefWidth="497.0" text="////About Drive :::::::::::::::::::::::::::::&#10;This is drive created by team 'Pionel Devsi'&#10;In this drive you can create your account and go on to store&#10;files or even download them when needed. The files can also &#10;be deleted or downloaded depending on the user's need. &#10;&#10;We've also implemented a few features such as Trash Bin,&#10;Favorites folder, as well as a Search Bar for user's convenience.&#10;&#10;Contributers :&#10;1. Naman Verma &#10;2. Nitin " textOverrun="CLIP">
+         <font>
+            <Font name="Baskerville Old Face" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

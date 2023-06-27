@@ -55,7 +55,6 @@ public class login{
             alert = new Alert(Alert.AlertType.INFORMATION, "Login successful.");
             loginEmailId = LoginEmailID.getText();
             Loader loader = new Loader("../Views/home page.fxml", Login, "Home Page");
-
         }
         alert.showAndWait();
     }catch (Exception e){

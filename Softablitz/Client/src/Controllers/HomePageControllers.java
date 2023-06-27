@@ -95,8 +95,10 @@ public class HomePageControllers implements Initializable {
                 alert.setContentText("Do you want to logout ?");
 
                 if(alert.showAndWait().get() == ButtonType.OK) {
-                        Stage stage = (Stage) scenePane.getScene().getWindow();
-                        stage.close();
+                        Loader loader = new Loader("../Views/login.fxml", LogOut, "Home Page");
+                }
+                else{
+                        Loader loader = new Loader("../Views/home page.fxml", LogOut, "Home Page");
                 }
         }
 
